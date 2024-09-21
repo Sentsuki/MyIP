@@ -122,7 +122,7 @@
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between align-items-start"
-                        :class="[isDarkMode ? 'border-light' : 'border-dark']" v-if="configs.bingMap">
+                        :class="[isDarkMode ? 'border-light' : 'border-dark']" v-if="configs.googleMap">
                         <div class="me-auto">
                             <div class="fw-bold"><label class="form-check-label" for="showMap">{{
                                 t('nav.preferences.showMap')

@@ -424,7 +424,7 @@ const ShortcutKeys = (isOriginalSite) => {
     {
       keys: "m",
       action: () => {
-        if (configs.value.bingMap) {
+        if (configs.value.googleMap) {
           window.scrollTo({ top: 0, behavior: "smooth" });
           preferencesRef.value.toggleMaps();
         };
