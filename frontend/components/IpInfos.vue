@@ -196,7 +196,7 @@ import { useI18n } from 'vue-i18n';
 import { trackEvent } from '@/utils/use-analytics';
 import { isValidIP } from '@/utils/valid-ip.js';
 import { transformDataFromIPapi } from '@/utils/transform-ip-data.js';
-import { getIPFromIPIP, getIPFromCloudflare_V4, getIPFromCloudflare_V6, getIPFromIPChecking64, getIPFromIPChecking4, getIPFromIPChecking6 } from '@/utils/getips';
+import { getIPFromIPIP, getIPFromCloudflare_V4, getIPFromCloudflare_V6, getIPFromCloudflare_CN, getIPFromIpify_V4, getIPFromIpify_V6 } from '@/utils/getips';
 
 
 const { t } = useI18n();
@@ -259,18 +259,18 @@ const ipDataCards = reactive([
   },
   {
     ...createDefaultCard(),
-    id: "ipchecking_v64",
-    source: "IPCheck.ing IPv6/4",
+    id: "cloudflare_CN",
+    source: "CF-CN",
   },
   {
     ...createDefaultCard(),
-    id: "ipchecking_v4",
-    source: "IPCheck.ing IPv4",
+    id: "IPify IPv4",
+    source: "IPify IPv4",
   },
   {
     ...createDefaultCard(),
-    id: "ipchecking_v6",
-    source: "IPCheck.ing IPv6",
+    id: "IPify IPv6",
+    source: "IPify IPv6",
   },
 ]);
 
@@ -334,9 +334,9 @@ const checkAllIPs = async () => {
     () => fetchIP(0, getIPFromIPIP),
     () => fetchIP(1, getIPFromCloudflare_V4),
     () => fetchIP(2, getIPFromCloudflare_V6),
-    () => fetchIP(3, getIPFromIPChecking64),
-    () => fetchIP(4, getIPFromIPChecking4),
-    () => fetchIP(5, getIPFromIPChecking6),
+    () => fetchIP(3, getIPFromCloudflare_CN),
+    () => fetchIP(4, getIPFromIpify_V4),
+    () => fetchIP(5, getIPFromIpify_V6),
   ];
 
   // 限制执行的函数数量为 ipCardsToShow 的长度
@@ -469,13 +469,13 @@ const refreshCard = (card, index) => {
       fetchIP(2, getIPFromCloudflare_V6);
       break;
     case 3:
-      fetchIP(3, getIPFromIPChecking64);
+      fetchIP(3, getIPFromCloudflare_CN);
       break;      
     case 4:
-      fetchIP(4, getIPFromIPChecking4);
+      fetchIP(4, getIPFromIpify_V4);
       break;
     case 5:
-      fetchIP(5, getIPFromIPChecking6);
+      fetchIP(5, getIPFromIpify_V6);
       break;
     default:
       console.error("Undefind Source:");
