@@ -14,7 +14,6 @@ export default (req, res) => {
     }
 
     const hostname = referer ? new URL(referer).hostname : '';
-    const originalSite = hostname === 'ipcheck.ing' || hostname === 'www.ipcheck.ing' || hostname === 'localtest.ipcheck.ing';
 
     const envConfigs = {
         googleMap: process.env.GOOGLE_MAP_API_KEY,

@@ -303,7 +303,7 @@ const generate28DigitString = () => {
 // 加载测试脚本
 const loadScript = () => {
     const script = document.createElement('script');
-    script.src = `https://proxydetectjs.ipcheck.ing/?pdKey=${import.meta.env.VITE_INVISIBILITY_TEST_KEY}&pdVal=${userID.value}`;
+    script.src = `000000000000`;
     script.async = true;
     script.setAttribute('data-tag', 'invisibilityTestScript');
     script.onload = () => {

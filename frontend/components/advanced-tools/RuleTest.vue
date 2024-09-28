@@ -82,7 +82,7 @@ const createDefaultCard = () => ({
 
 const ruleTests = ref(Array.from({ length: 8 }, (_, index) => ({
     id: index + 1,
-    url: `ptest-${index + 1}.ipcheck.ing`,
+    url: `ptest-${index + 1}.0000000`,
     ...createDefaultCard(),
 })));
 

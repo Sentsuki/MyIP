@@ -16,11 +16,11 @@
                                 <span class="text-secondary jn-comment"><span class="text-success">geo</span> {{t('shell.Note3')}}</span>
                                 <span>&nbsp;</span>
                                 <span class="jn-comment"><span class="text-secondary">{{t('shell.getIPv4')}}</span></span>
-                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">4.ipcheck.ing<span class="text-success">/geo</span></span></span>
+                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">4.000000<span class="text-success">/geo</span></span></span>
                                 <span class="jn-comment"><span class="text-secondary">{{t('shell.getIPv6')}}</span></span>
-                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">6.ipcheck.ing<span class="text-success">/geo</span></span></span>
+                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">6.000000<span class="text-success">/geo</span></span></span>
                                 <span class="jn-comment"><span class="text-secondary">{{t('shell.get6and4')}}</span></span>
-                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">64.ipcheck.ing<span class="text-success">/geo</span></span></span>
+                                <span class="jn-shell bg-black p-3 m-2 rounded-3">curl <span class="text-light">64.000000<span class="text-success">/geo</span></span></span>
                             </code>
                 </div>
                 <div class="modal-footer" :class="{ 'dark-mode-border': isDarkMode }">
