@@ -14,7 +14,7 @@ export default (req, res) => {
     }
 
     const hostname = referer ? new URL(referer).hostname : '';
-    const originalSite = hostname === 'nouse.szwcxrll.com';
+    const originalSite = hostname === 'nouse.aquapoetry.com';
 
     const envConfigs = {
         googleMap: process.env.GOOGLE_MAP_API_KEY,
