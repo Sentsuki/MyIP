@@ -203,7 +203,7 @@ import { useI18n } from 'vue-i18n';
 import { trackEvent } from '@/utils/use-analytics';
 import { isValidIP } from '@/utils/valid-ip.js';
 import { transformDataFromIPapi } from '@/utils/transform-ip-data.js';
-import { getIPFromIPIP, getIPFromCloudflare_V4, getIPFromCloudflare_V6, getIPFromCloudflare_CN, getIPFromIpify_V4, getIPFromIpify_V6 } from '@/utils/getips';
+import { getIPFromIPIP, getIPFromCloudflare_V4, getIPFromCloudflare_V6, getIPFromUpai, getIPFromIpify_V4, getIPFromIpify_V6 } from '@/utils/getips';
 
 
 const { t } = useI18n();
@@ -344,7 +344,7 @@ const checkAllIPs = async () => {
     () => fetchIP(0, getIPFromIPIP),
     () => fetchIP(1, getIPFromCloudflare_V4),
     () => fetchIP(2, getIPFromCloudflare_V6),
-    () => fetchIP(3, getIPFromCloudflare_CN),
+    () => fetchIP(3, getIPFromUpai),
     () => fetchIP(4, getIPFromIpify_V4),
     () => fetchIP(5, getIPFromIpify_V6),
   ];
@@ -479,7 +479,7 @@ const refreshCard = (card, index) => {
       fetchIP(2, getIPFromCloudflare_V6);
       break;
     case 3:
-      fetchIP(3, getIPFromCloudflare_CN);
+      fetchIP(3, getIPFromUpai);
       break;      
     case 4:
       fetchIP(4, getIPFromIpify_V4);
