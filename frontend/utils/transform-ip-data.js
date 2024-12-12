@@ -1,5 +1,5 @@
 // 解析IP数据
-function transformDataFromIPapi(data, ipGeoSource, t, MapLanguage) {
+function transformDataFromIPapi(data, ipGeoSource, t, mapLanguage) {
     if (data.error) {
         throw new Error(data.reason);
     }
@@ -14,8 +14,8 @@ function transformDataFromIPapi(data, ipGeoSource, t, MapLanguage) {
         isp: data.org || "",
         asn: data.asn || "",
         asnlink: data.asn ? `https://radar.cloudflare.com/${data.asn}` : false,
-        mapUrl: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${MapLanguage}&mapType=roadmap` : "",
-        mapUrl_dark: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${MapLanguage}&mapType=roadmap` : ""
+        mapUrl: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${mapLanguage}` : "",
+        mapUrl_dark: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${mapLanguage}&CanvasMode=Dark` : ""
     };
 
     if (ipGeoSource === 0) {

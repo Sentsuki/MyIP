@@ -17,7 +17,7 @@ export default (req, res) => {
     const originalSite = hostname === 'nouse.aquapoetry.com';
 
     const envConfigs = {
-        googleMap: process.env.GOOGLE_MAP_API_KEY,
+        map: process.env.GOOGLE_MAP_API_KEY,
         ipInfo: process.env.IPINFO_API_TOKEN,
         ipChecking: process.env.IPCHECKING_API_KEY,
         keyCDN: process.env.KEYCDN_USER_AGENT,
