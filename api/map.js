@@ -60,12 +60,17 @@ export default (req, res) => {
     const mapSize = '500x400';
     const fmt = 'jpg';
     const scale = 2;
-    const zoom = 3;
+    const zoom = 8;
 
     const apiKeys = (process.env.GOOGLE_MAP_API_KEY || '').split(',');
     const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
 
-    const url = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&markers=color:blue%7C${latitude},${longitude}&scale=${scale}&zoom=${zoom}&maptype=roadmap&language=${language}&format=${fmt}&size=${mapSize}&key=${apiKey}`;
+    let styleParam = '';
+    if (CanvasMode === 'Dark') {
+        styleParam = styles.Dark.join('&style=');
+    }
+
+    const url = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&markers=color:blue%7C${latitude},${longitude}&scale=${scale}&zoom=${zoom}&maptype=roadmap&language=${language}&format=${fmt}&size=${mapSize}&style=${styleParam}&key=${apiKey}`;
 
     get(url, apiRes => {
         apiRes.pipe(res);

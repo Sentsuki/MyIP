@@ -15,7 +15,7 @@ function transformDataFromIPapi(data, ipGeoSource, t, mapLanguage) {
         asn: data.asn || "",
         asnlink: data.asn ? `https://radar.cloudflare.com/${data.asn}` : false,
         mapUrl: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${mapLanguage}` : "",
-        mapUrl_dark: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${mapLanguage}` : ""
+        mapUrl_dark: data.latitude && data.longitude ? `/api/map?latitude=${data.latitude}&longitude=${data.longitude}&language=${mapLanguage}&style=${styleParam}` : ""
     };
 
     if (ipGeoSource === 0) {
