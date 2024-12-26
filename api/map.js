@@ -57,10 +57,10 @@ export default (req, res) => {
         return res.status(400).json({ error: 'Missing latitude, longitude, or language' });
     }
 
-    const mapSize = '500x400';
+    const mapSize = '800x640';
     const fmt = 'jpg';
     const scale = 2;
-    const zoom = 5;
+    const zoom = 6;
 
     const apiKeys = (process.env.GOOGLE_MAP_API_KEY || '').split(',');
     const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
