@@ -65,7 +65,7 @@ export default (req, res) => {
     const apiKeys = (process.env.GOOGLE_MAP_API_KEY || '').split(',');
     const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
 
-    const url = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&markers=color:blue%7C${latitude},${longitude}&scale=${scale}&zoom=${zoom}&maptype=roadmap&language=${language}&format=${fmt}&size=${mapSize}&style=${styleParam}&key=${apiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&markers=color:blue%7C${latitude},${longitude}&scale=${scale}&zoom=${zoom}&maptype=roadmap&language=${language}&format=${fmt}&size=${mapSize}&key=${apiKey}`;
 
     get(url, apiRes => {
         apiRes.pipe(res);
