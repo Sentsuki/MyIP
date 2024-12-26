@@ -51,7 +51,7 @@ export default (req, res) => {
     }
 
     // 使用 req.query 获取参数
-    const { latitude, longitude, language, mapType } = req.query;
+    const { latitude, longitude, language, CanvasMode } = req.query;
 
     if (!latitude || !longitude || !language) {
         return res.status(400).json({ error: 'Missing latitude, longitude, or language' });
