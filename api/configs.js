@@ -14,13 +14,14 @@ export default (req, res) => {
     }
 
     const hostname = referer ? new URL(referer).hostname : '';
-    const originalSite = hostname === 'nouse.aquapoetry.com';
+    const allowedHostnames = ['nouse.aquapoetry.com'];
+    const originalSite = allowedHostnames.includes(hostname);
 
     const envConfigs = {
         map: process.env.GOOGLE_MAP_API_KEY,
         ipInfo: process.env.IPINFO_API_TOKEN,
         ipChecking: process.env.IPCHECKING_API_KEY,
-        keyCDN: process.env.KEYCDN_USER_AGENT,
+        ip2location: process.env.IP2LOCATION_API_KEY,
         originalSite,
         cloudFlare: process.env.CLOUDFLARE_API,
         ipapiis: process.env.IPAPIIS_API_KEY,
