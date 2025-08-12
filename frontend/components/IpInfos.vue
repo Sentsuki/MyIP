@@ -291,13 +291,13 @@ const refreshCard = (card, index) => {
   clearCardData(card);
   switch (index) {
     case 0:
-      fetchIP(0, getIPFromIPIP);
+      fetchIP(0, getIPFromIPChecking64);
       break;
     case 1:
-      fetchIP(1, getIPFromCloudflare_V4);
+      fetchIP(1, getIPFromIPChecking4);
       break;
     case 2:
-      fetchIP(2, getIPFromCloudflare_V6);
+      fetchIP(2, getIPFromIPChecking6);
       break;
     case 3:
       fetchIP(3, getIPFromUpai);
