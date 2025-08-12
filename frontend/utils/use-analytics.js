@@ -1,5 +1,5 @@
 // 引入 Google Analytics 配置
-const MEASUREMENT_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID || '';
+const MEASUREMENT_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID || 'G-WQM1TLVX3S';
 
 // 全局状态
 let scriptInjected = false;
